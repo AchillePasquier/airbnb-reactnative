@@ -16,6 +16,7 @@ import {
 import { useEffect, useState } from "react";
 import { SwiperFlatList } from "react-native-swiper-flatlist";
 import axios from "axios";
+import MapView from "react-native-maps";
 
 import { Entypo } from "@expo/vector-icons";
 
@@ -112,6 +113,22 @@ export default function RoomScreen({ route }) {
               {displayAllText === false ? "See more" : "See less"}
             </Text>
           </TouchableOpacity>
+          <MapView
+            style={{ height: 300 }}
+            initialRegion={{
+              latitude: data.location[1],
+              longitude: data.location[0],
+              latitudeDelta: 0.05,
+              longitudeDelta: 0.05,
+            }}
+          >
+            <MapView.Marker
+              coordinate={{
+                latitude: data.location[1],
+                longitude: data.location[0],
+              }}
+            />
+          </MapView>
         </ScrollView>
       )}
     </SafeAreaView>
@@ -174,7 +191,7 @@ const styles = StyleSheet.create({
   imageUser: {
     height: 60,
     width: 60,
-    borderRadius: 50,
+    //borderRadius: 50,
   },
   description: {
     padding: 10,
