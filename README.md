@@ -2,9 +2,11 @@
 
 Airbnb clone developped using React-Native
 
+<br>
+<br>
+
 ## Overview
 
-<br>
 <br>
 
 <p>
